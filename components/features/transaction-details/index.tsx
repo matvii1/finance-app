@@ -1,5 +1,6 @@
 'use client';
 
+import Card from '@/components/ui/card';
 import { Transaction } from '@/types/app-data';
 import Link from 'next/link';
 
@@ -23,7 +24,7 @@ export default function TransactionDetails({
         <p className="text-sm text-gray-500">{transaction.fullDate}</p>
       </div>
       <div className="px-4">
-        <div className="mt-4 rounded-lg bg-white p-4">
+        <Card className="mt-4">
           <div className="px-4 pb-4">
             <h2 className="mb-2 font-semibold">Status: {transaction.status}</h2>
             <p className="text-gray-500">{transaction.paymentMethod}</p>
@@ -35,7 +36,7 @@ export default function TransactionDetails({
               <p className="font-semibold">${transaction.amount}</p>
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );

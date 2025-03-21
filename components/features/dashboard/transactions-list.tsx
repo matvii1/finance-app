@@ -1,3 +1,4 @@
+import IconBase from '@/components/ui/icon-base';
 import { Transaction } from '@/types/app-data';
 import Link from 'next/link';
 
@@ -16,14 +17,10 @@ export default function TransactionsList({
               className="flex cursor-pointer items-center p-4"
               href={`/transaction/${transaction.id}`}
             >
-              <div
-                className="mr-3 flex h-12 w-12 items-center justify-center rounded-lg"
-                style={{ backgroundColor: transaction.iconBgColor }}
-              >
-                <i
-                  className={`fa-brands fa-${transaction.icon} text-xl text-white`}
-                ></i>
-              </div>
+              <IconBase
+                bgColor={transaction.iconBgColor}
+                icon={transaction.icon}
+              />
               <div className="flex flex-1 justify-between gap-1">
                 <div>
                   <h3 className="font-semibold">{transaction.name}</h3>

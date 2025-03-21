@@ -1,3 +1,4 @@
+import Card from '@/components/ui/card';
 import { calculateDailyPoints, formatPoints } from '@/lib/utils';
 
 type HeaderProps = {
@@ -15,15 +16,15 @@ export default function Header({
 }: HeaderProps): React.JSX.Element {
   return (
     <header className="grid grid-cols-2 grid-rows-[200px,200px] gap-2.5 p-4">
-      <div className="row-span-1 rounded-lg bg-white p-4 shadow-sm">
+      <Card className="row-span-1">
         <h2 className="text-sm font-medium text-gray-600">Card Balance</h2>
         <p className="text-3xl font-bold">${cardBalance.toFixed(2)}</p>
         <p className="text-sm font-semibold text-gray-400">
           ${(1500 - cardBalance).toFixed(2)} Available
         </p>
-      </div>
+      </Card>
 
-      <div className="row-span-2 flex flex-col justify-between rounded-lg bg-white p-4 shadow-sm">
+      <Card className="row-span-2 flex flex-col justify-between">
         <div>
           <h2 className="text-sm font-semibold text-gray-600">
             No Payment Due
@@ -36,14 +37,14 @@ export default function Header({
             <i className="fa-solid fa-check text-gray-700"></i>
           </div>
         </div>
-      </div>
+      </Card>
 
-      <div className="row-span-1 rounded-lg bg-white p-4 shadow-sm">
+      <Card className="row-span-1">
         <h2 className="text-sm font-medium text-gray-600">Daily Points</h2>
         <p className="text-base font-semibold text-gray-400">
           {formatPoints(calculateDailyPoints(currentDay, currentSeason))}
         </p>
-      </div>
+      </Card>
     </header>
   );
 }
