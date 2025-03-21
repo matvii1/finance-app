@@ -1,6 +1,11 @@
 import IconBase from '@/components/ui/icon-base';
 import { Transaction } from '@/types/app-data';
 import Link from 'next/link';
+import { faApple, faAmazon } from '@fortawesome/free-brands-svg-icons';
+const iconMap = {
+  apple: faApple,
+  amazon: faAmazon,
+};
 
 export default function TransactionsList({
   transactions,
@@ -19,7 +24,9 @@ export default function TransactionsList({
             >
               <IconBase
                 bgColor={transaction.iconBgColor}
-                icon={transaction.icon}
+                icon={
+                  iconMap[transaction.icon as keyof typeof iconMap] || faApple
+                }
               />
               <div className="flex flex-1 justify-between gap-1">
                 <div>
