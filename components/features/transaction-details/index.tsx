@@ -3,7 +3,8 @@
 import Card from '@/components/ui/card';
 import { Transaction } from '@/types/app-data';
 import Link from 'next/link';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 type TransactionDetailsProps = {
   transaction: Transaction;
 };
@@ -15,7 +16,7 @@ export default function TransactionDetails({
     <div className="mx-auto min-h-screen max-w-md bg-gray-100">
       <div className="flex items-center p-4">
         <Link href=".." className="text-blue-500">
-          <i className="fa-solid fa-chevron-left"></i>
+          <FontAwesomeIcon icon={faChevronLeft} />
         </Link>
       </div>
       <div className="flex flex-col items-center p-6">

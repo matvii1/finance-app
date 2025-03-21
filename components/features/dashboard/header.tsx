@@ -1,6 +1,7 @@
 import Card from '@/components/ui/card';
 import { calculateDailyPoints, formatPoints } from '@/lib/utils';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 type HeaderProps = {
   cardBalance: number;
   paymentDueMessage: string;
@@ -34,7 +35,7 @@ export default function Header({
 
         <div className="mt-2 flex justify-end">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200">
-            <i className="fa-solid fa-check text-gray-700"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-gray-700" />
           </div>
         </div>
       </Card>
